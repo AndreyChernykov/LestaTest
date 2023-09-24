@@ -20,7 +20,6 @@ namespace Game.BuildScene
         [SerializeField] GameObject tilePrefab;
         [SerializeField] Transform positionTile;
 
-        //private List<GameObject> tileList = new List<GameObject>();
         public List<GameObject> TileList { get; private set; }
         public List<int> conditions { get; private set; }
 

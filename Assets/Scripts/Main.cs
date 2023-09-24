@@ -19,15 +19,12 @@ namespace Game
         {
             conditionBuilder.Build(configsLevel.levelColumns, configsLevel.conditionBox, configsLevel.boxes);
             levelBuilder.Build(configsLevel.levelColumns, configsLevel.levelLines, configsLevel.conditionBox, configsLevel.boxes);
-            levelBuilder.CreateBoxes(configsLevel.conditionBox, configsLevel.boxes);
-
-            
+            levelBuilder.CreateBoxes(configsLevel.conditionBox, configsLevel.boxes);           
         }
 
         private void Update()
         {
             player.Raycast(configsLevel.boxes);
-            //gameManager.CheckArray(configsLevel.conditionBox, conditionBuilder.TileList, levelBuilder.TileArray);
             GameManager.SendEvent();
         }
     }

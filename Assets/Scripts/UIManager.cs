@@ -9,7 +9,7 @@ namespace Game.Play
     public class UIManager : MonoBehaviour
     {
         [SerializeField] GameManager gameManager;
-        [SerializeField] Audio audio;
+        [SerializeField] Audio audioObj;
         [SerializeField] TextMeshProUGUI textTime;
         [SerializeField] TextMeshProUGUI textCounter;
         [SerializeField] Toggle toggleOnTimer;
@@ -18,8 +18,8 @@ namespace Game.Play
         [SerializeField] GameObject startPanel;
         [SerializeField] GameObject winPanel;
 
-        string timer = "Time: ";
-        string counter = "Steps: ";
+        private string timer = "Time: ";
+        private string counter = "Steps: ";
 
         private void DisplayTimer()
         {
@@ -65,8 +65,8 @@ namespace Game.Play
 
         public void OnSound()
         {
-            audio.isPlay = toggleOnSound.isOn;
-            audio.PlayMusic();
+            audioObj.isPlay = toggleOnSound.isOn;
+            audioObj.PlayMusic();
         }
 
         public void Play()

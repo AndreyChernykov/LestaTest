@@ -17,12 +17,14 @@ namespace Game.Play
         [SerializeField] CameraMover cameraMover;
         [SerializeField] Audio audioObj;
 
-        GameObject selectedObject;
-        Vector3 lastPositionBox;
-        Tile lastTile = null;
-        List<(int, int)> numsTile = new List<(int, int)>();
+        int maxItemOnTile = 2;
 
-        RaycastHit[] rcColliders;
+        private GameObject selectedObject;
+        private Vector3 lastPositionBox;
+        private Tile lastTile = null;
+        private List<(int, int)> numsTile = new List<(int, int)>();
+
+        private RaycastHit[] rcColliders;
 
         public void Raycast(List<GameObject> boxes)
         {
@@ -38,7 +40,7 @@ namespace Game.Play
                 
                 Drag(boxes, hit);
 
-                if (rcColliders.Length > 2) //протестить и переписать покрасивее!!!
+                if (rcColliders.Length > maxItemOnTile)
                 {
                     NotDrag();
                 }
